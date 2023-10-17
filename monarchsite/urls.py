@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from monarchsite import views
 
+#
+# These are the routes that are answered by our webserver
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.home),
+    path('monarchs/',views.monarchs),
+    path('monarchs/<int:id>',views.monarch_detail)
 ]

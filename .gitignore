@@ -1,7 +1,9 @@
 #generics
 *.exe
+*.secret
 #virtual environment
 .monarch-site 
+
 
 #######################
 ## TERRAFORM

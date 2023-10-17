@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Monarchs Page</title>
+  </head>
+  <body>
+    {% for monarch in monarchs_data%}
+
+    <h1><a href="{{monarch.id}}">{{monarch.name}}</a></h1>
+
+    {% endfor %}
+  </body>
+</html>
