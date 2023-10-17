@@ -24,5 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
     path('monarchs/',views.monarchs),
-    path('monarchs/<int:id>',views.monarch_detail)
+    path('monarchs/<int:id>',views.monarch_detail),
+    path('monarchs/add', views.monarch_add),
+    path('monarchs/delete/<int:id>', views.monarch_delete)
 ]

@@ -2,13 +2,17 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>The Monarchs Page</title>
+    <title>Information Requested: {{monarch.name}}</title>
   </head>
   <body>
-    <h1>{{monarch.name}}</h1>
+    <h1>Information Requested: {{monarch.name}}</h1>
     <p>
       {{monarch.name}} follows the Path of {{monarch.path}} which has the
       aspect(s) of {{monarch.aspect}}.
+    </p>
+    <p>
+      You can remove him from the list by hitting
+      <a href="delete/{{monarch.id}}">Delete</a>
     </p>
   </body>
 </html>

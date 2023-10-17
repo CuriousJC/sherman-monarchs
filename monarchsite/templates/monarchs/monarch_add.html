@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Please Enter Information about a New Monarch</title>
+  </head>
+  <body>
+    <form action="add" method="POST">
+      {% csrf_token %}
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="example: Northstrider"
+      />
+      <br /><br />
+
+      <label for="path">Path:</label>
+      <input
+        type="text"
+        id="path"
+        name="path"
+        required
+        placeholder="example: The Hungry Deep"
+      />
+      <br /><br />
+
+      <label for="aspect">Aspects:</label>
+      <textarea
+        id="aspect"
+        name="aspect"
+        rows="4"
+        cols="50"
+        required
+        placeholder="example: Hunger and Blood"
+      ></textarea>
+      <br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
