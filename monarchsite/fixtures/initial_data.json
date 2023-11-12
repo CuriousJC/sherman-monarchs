@@ -1,0 +1,29 @@
+[
+  {
+    "model": "monarchsite.monarch",
+    "pk": 1,
+    "fields": {
+      "name": "Malice",
+      "path": "Eternal Night",
+      "aspect": "Shadow"
+    }
+  },
+  {
+    "model": "monarchsite.monarch",
+    "pk": 2,
+    "fields": {
+      "name": "Northstrider",
+      "path": "The Hungry Deep",
+      "aspect": "Blood and Hunger"
+    }
+  },
+  {
+    "model": "monarchsite.monarch",
+    "pk": 3,
+    "fields": {
+      "name": "Reigan Shen",
+      "path": "The Kings Key",
+      "aspect": "Force and Space"
+    }
+  }
+]

@@ -1,9 +1,17 @@
 # Use an official Python runtime as a parent image
-FROM python:3.8-slim
+FROM python:3.8
 
 # Set environment variables for Python and Django
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+
+# Install system dependencies including MySQL client library
+RUN apt-get update && \
+    apt-get install -y mariadb-client
+
+# Set MySQL client configurations
+ENV MYSQLCLIENT_CFLAGS="-I/usr/include/mysql"
+ENV MYSQLCLIENT_LDFLAGS="-L/usr/lib/x86_64-linux-gnu -lmysqlclient"
 
 # Set the working directory in the container
 WORKDIR /app
