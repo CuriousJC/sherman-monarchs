@@ -31,11 +31,16 @@ python manage.py collectstatic --noinput #not sure this is needed yet, don't hav
 
 choco install docker-desktop
 
+docker stop $(docker ps -q)
 docker buildx build -t monarchsite . #builds an image into the docker desktop image registry
 
-docker run -d -p 8080:8000 monarchsite:latest #runs image in detached mode
+docker run --env-file .env -d -p 8080:8000 monarchsite:latest  #runs image in detached mode
 # http://localhost:8080/
 # http://localhost:8080/monarchs
 
+#http://localhost:8001/monarchs
+#http://localhost:8080/monarchs/
+
 
 docker container prune -f 
+docker image prune -f

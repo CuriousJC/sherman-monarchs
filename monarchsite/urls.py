@@ -15,16 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from monarchsite import views
 
 #
 # These are the routes that are answered by our webserver
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('monarchmiddle.urls')),  
     path('',views.home),
     path('monarchs/',views.monarchs),
     path('monarchs/<int:id>',views.monarch_detail),
     path('monarchs/add', views.monarch_add),
-    path('monarchs/delete/<int:id>', views.monarch_delete)
+    path('monarchs/delete/<int:id>', views.monarch_delete),
 ]
+
+# Add the following to serve static files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
