@@ -1,3 +1,6 @@
+#generic
+*.secret
+
 # Exclude version control files and directories
 .git
 .gitignore
